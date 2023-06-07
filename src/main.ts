@@ -1,8 +1,8 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { ValidationPipe } from '@nestjs/common';
 
 import 'dotenv/config';
-import { ValidationPipe } from '@nestjs/common';
 
 const port = process.env.PORT ?? 3000;
 const env = process.env.NODE_ENV ?? 'development';
