@@ -24,12 +24,12 @@ export class BooksController {
     return await this.booksService.createBook(newBook);
   }
   @Put(':bookId')
-  updateBook() {
-    return 'Update book';
+  async updateBook(@Param('bookId') bookId: string): Promise<Book> {
+    return await this.booksService.updateBook(bookId);
   }
   @Delete(':bookId')
-  deleteBook() {
-    return 'Delete book';
+  async deleteBook(@Param('bookId') bookId: string): Promise<Book> {
+    return await this.booksService.deleteBook(bookId);
   }
   @Get(':bookId')
   async getBookById(@Param('bookId') bookId: string): Promise<Book> {

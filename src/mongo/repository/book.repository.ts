@@ -21,4 +21,12 @@ export class BookRepository {
   async getBookById(bookId: string): Promise<Book> {
     return await this.bookModel.findById(bookId, { __v : false }).exec();  
   }
+
+  async deleteBook(bookId: string): Promise<Book> {
+    return await this.bookModel.findByIdAndDelete(bookId, { __v : false }).exec();
+  }
+
+  async updateBook(bookId: string): Promise<Book> {
+    return await this.bookModel.findByIdAndUpdate(bookId, { __v : false }).exec();
+  }
 }

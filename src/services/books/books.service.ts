@@ -26,4 +26,20 @@ export class BooksService {
       throw new Error('Book not found');
     }
   }
+
+  async deleteBook(bookId: string): Promise<Book> {
+    try {
+      return await this.bookRepository.deleteBook(bookId);
+    } catch (error) {
+      throw new Error('Book not found');
+    }
+  }
+
+  async updateBook(bookId: string): Promise<Book> {
+    try {
+      return await this.bookRepository.updateBook(bookId);
+    } catch (error) {
+      throw new Error('Book not found');
+    }
+  }
 }
