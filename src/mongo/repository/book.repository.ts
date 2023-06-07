@@ -9,14 +9,16 @@ import { BookDto } from 'src/dto/books.dto';
 export class BookRepository {
   constructor(@InjectModel('Book') private readonly bookModel: Model<Book>) {}
 
-  async getAllBooks(): Promise<BookDto[]> {
-    const books = await this.bookModel.find().exec();
-    return books.map((book) => book.toObject());   
+  async getAllBooks(): Promise<Book[]> {
+    return await this.bookModel.find({}, { __v : false }).sort({ name: +1 }).exec();
   }
 
-  async createBook(newBook: BookDto): Promise<BookDto> {
-    const book = new this.bookModel(newBook);
-    const savedBook = await book.save();
-    return savedBook.toObject();
+  async createBook(newBook: BookDto): Promise<Book> {
+    const savedBook = new this.bookModel(newBook);
+    return await savedBook.save();
+  }
+
+  async getBookById(bookId: string): Promise<Book> {
+    return await this.bookModel.findById(bookId, { __v : false }).exec();  
   }
 }
