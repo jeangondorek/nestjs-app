@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -38,5 +37,11 @@ export class BookRepository {
           { "author.surname": {$in: authorName} }
         ]
       });
+  }
+
+  async getBookByBookTitle(bookTitle: string): Promise<Book[]> {
+    return await this.bookModel.find(
+      { title: { $regex: bookTitle, $options: 'i' } }, { __v : false}
+    );
   }
 }

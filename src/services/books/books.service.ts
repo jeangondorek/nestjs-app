@@ -53,4 +53,12 @@ export class BooksService {
       throw new Error('Book not found');
     }
   }
+
+  async getBookByBookTitle(bookTitle: string): Promise<Book[]> {
+    const foundedBooks = await this.bookRepository.getBookByBookTitle(bookTitle);
+    if (!foundedBooks.length) {
+      throw new BadRequestException('Book not found');
+    }
+    return foundedBooks;
+  }
 }

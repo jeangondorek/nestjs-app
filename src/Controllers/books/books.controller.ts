@@ -46,4 +46,9 @@ export class BooksController {
   ): Promise<Book[]> {
     return await this.booksService.getBookByAuthorName(authorName);
   }
+
+  @Get('title/:bookTitle')
+  async getBookByBookTitle(@Param('bookTitle') bookTitle: string): Promise<Book[]> {
+    return await this.booksService.getBookByBookTitle(bookTitle);
+  }
 }
