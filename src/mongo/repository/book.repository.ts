@@ -29,4 +29,14 @@ export class BookRepository {
   async updateBook(bookId: string): Promise<Book> {
     return await this.bookModel.findByIdAndUpdate(bookId, { __v : false }).exec();
   }
+
+  async getBookByAuthorName(authorName: string[]): Promise<Book[]> {
+    return await this.bookModel.find(
+      { 
+        $or: [
+          { "author.name": {$in: authorName } },
+          { "author.surname": {$in: authorName} }
+        ]
+      });
+  }
 }

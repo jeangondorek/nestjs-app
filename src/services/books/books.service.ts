@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { BadRequestException, Injectable } from '@nestjs/common';
 import { BookDto } from 'src/dto/books.dto';
 import { Book } from 'src/mongo/interfaces/book.interface';
 import { BookRepository } from 'src/mongo/repository/book.repository';
@@ -25,6 +25,17 @@ export class BooksService {
     } catch (error) {
       throw new Error('Book not found');
     }
+  }
+
+  async getBookByAuthorName(authorName: string): Promise<Book[]> {
+    const splitAuthorName = authorName.split(' ');
+    const foundedBooks = await this.bookRepository.getBookByAuthorName(
+      splitAuthorName
+    );
+    if (!foundedBooks.length) {
+      throw new BadRequestException('Book not found');
+    }
+    return foundedBooks;
   }
 
   async deleteBook(bookId: string): Promise<Book> {
