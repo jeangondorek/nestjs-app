@@ -25,8 +25,26 @@ export class BookRepository {
     return await this.bookModel.findByIdAndDelete(bookId, { __v : false }).exec();
   }
 
-  async updateBook(bookId: string): Promise<Book> {
-    return await this.bookModel.findByIdAndUpdate(bookId, { __v : false }).exec();
+  async updateBook(bookId: string, updateBook: BookDto): Promise<Book> {
+    const { title, author, language, releaseyear, pages, publisher } = updateBook;
+  
+    const updatedBookData: Partial<Book> = {};
+    if (title) updatedBookData.title = title;
+    if (author) updatedBookData.author = author;
+    if (language) updatedBookData.language = language;
+    if (releaseyear) updatedBookData.releaseyear = releaseyear;
+    if (pages) updatedBookData.pages = pages;
+    if (publisher) updatedBookData.publisher = publisher;
+  
+    const updatedBook = await this.bookModel
+      .findByIdAndUpdate(bookId, updatedBookData, { new: true })
+      .exec();
+  
+    if (!updatedBook) {
+      throw new Error('Book not found');
+    }
+  
+    return updatedBook;
   }
 
   async getBookByAuthorName(authorName: string[]): Promise<Book[]> {

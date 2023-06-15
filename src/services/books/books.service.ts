@@ -46,9 +46,9 @@ export class BooksService {
     }
   }
 
-  async updateBook(bookId: string): Promise<Book> {
+  async updateBook(bookId: string, updatedBook: BookDto): Promise<Book> {
     try {
-      return await this.bookRepository.updateBook(bookId);
+      return await this.bookRepository.updateBook(bookId, updatedBook);
     } catch (error) {
       throw new Error('Book not found');
     }

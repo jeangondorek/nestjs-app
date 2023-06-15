@@ -4,11 +4,11 @@ import * as mongoose from 'mongoose';
 
 export interface Book extends Document {
 
-  readonly _id: mongoose.Schema.Types.ObjectId,
-  readonly title: string,
-  readonly author: object,
-  readonly language: string,
-  readonly releaseyear: number,
-  readonly pages: number,
-  readonly publisher: string,
+  _id: mongoose.Schema.Types.ObjectId,
+  title: string,
+  author: object,
+  language: string,
+  releaseyear: number,
+  pages: number,
+  publisher: string,
 }

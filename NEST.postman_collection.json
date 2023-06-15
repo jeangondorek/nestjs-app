@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "4044b886-1a7d-4c6c-9fc2-14fad0745fe1",
+		"_postman_id": "e294fce2-d9f0-43d4-8f4f-a8afc98a9bee",
 		"name": "NEST",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "21538623",
-		"_collection_link": "https://dark-escape-112407.postman.co/workspace/hdfhdfh~93ed618e-1e46-4d53-b68a-07dcd655ebb0/collection/21538623-4044b886-1a7d-4c6c-9fc2-14fad0745fe1?action=share&creator=21538623&source=collection_link"
+		"_exporter_id": "26614633"
 	},
 	"item": [
 		{
@@ -13,12 +12,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2545/books",
-					"protocol": "http",
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "2545",
 					"path": [
 						"books"
 					]
@@ -27,63 +29,72 @@
 			"response": []
 		},
 		{
-			"name": "http://localhost:2545/books/authorname",
+			"name": "http://localhost:2545/books/id/:id",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2545/books/author/string",
-					"protocol": "http",
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books/id/648b12b05ab784876d6bbdb5",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "2545",
-					"path": [
-						"books",
-						"author",
-						"string"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:2545/books/name/string",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:2545/books/title/carmila",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "2545",
-					"path": [
-						"books",
-						"title",
-						"carmila"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "http://localhost:2545/books/:id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:2545/books/id/64822ee0298f34109b3a0744",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "2545",
 					"path": [
 						"books",
 						"id",
-						"64822ee0298f34109b3a0744"
+						"648b12b05ab784876d6bbdb5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2545/books/title/:title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books/title/jean",
+					"protocol": "https",
+					"host": [
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
+					],
+					"path": [
+						"books",
+						"title",
+						"jean"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:2545/books/author/:authorName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books/author/jean",
+					"protocol": "https",
+					"host": [
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
+					],
+					"path": [
+						"books",
+						"author",
+						"jean"
 					]
 				}
 			},
@@ -96,7 +107,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"title\": \"carmila campira\",\r\n  \"author\": [\r\n      {\r\n        \"name\": \"Jean\",\r\n        \"surname\": \"string\"\r\n      },\r\n      {\r\n        \"name\": \"string2\",\r\n        \"surname\": \"string2\"\r\n      }\r\n    ],\r\n  \"language\": \"string\",\r\n  \"releaseyear\": 2002,\r\n  \"pages\": 15,\r\n  \"publisher\": \"string\"\r\n}",
+					"raw": "{\r\n  \"title\": \"jean\",\r\n  \"author\": [\r\n      {\r\n        \"name\": \"jean\",\r\n        \"surname\": \"string\"\r\n      },\r\n      {\r\n        \"name\": \"string2\",\r\n        \"surname\": \"string2\"\r\n      }\r\n    ],\r\n  \"language\": \"string\",\r\n  \"releaseyear\": 2002,\r\n  \"pages\": 15,\r\n  \"publisher\": \"string\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -104,12 +115,15 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:2545/books",
-					"protocol": "http",
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "2545",
 					"path": [
 						"books"
 					]
@@ -124,7 +138,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"title\": \"string\",\n  \"author\": [\n      {\n        \"name\": \"string\",\n        \"surname\": \"string\"\n      },\n      {\n        \"name\": \"string2\",\n        \"surname\": \"string2\"\n      }\n    ],\n  \"language\": \"string\",\n  \"releaseyear\": 2002,\n  \"pages\": 15,\n  \"publisher\": \"string\"\n}",
+					"raw": "{\r\n  \"title\": \"jean\",\r\n  \"author\": [\r\n      {\r\n        \"name\": \"jean\",\r\n        \"surname\": \"string\"\r\n      },\r\n      {\r\n        \"name\": \"string2\",\r\n        \"surname\": \"string2\"\r\n      }\r\n    ],\r\n  \"language\": \"string\",\r\n  \"releaseyear\": 2002,\r\n  \"pages\": 15,\r\n  \"publisher\": \"string\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -132,15 +146,18 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:2545/books/64822ee0298f34109b3a0744",
-					"protocol": "http",
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books/648b12b05ab784876d6bbdb5",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "2545",
 					"path": [
 						"books",
-						"64822ee0298f34109b3a0744"
+						"648b12b05ab784876d6bbdb5"
 					]
 				}
 			},
@@ -152,15 +169,18 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:2545/books/64822f04298f34109b3a0754",
-					"protocol": "http",
+					"raw": "https://jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545.preview.app.github.dev/books/648b1371fe30c0f7344e8de2",
+					"protocol": "https",
 					"host": [
-						"localhost"
+						"jeangondorek-reimagined-garbanzo-x9q9559569ph6rj6-2545",
+						"preview",
+						"app",
+						"github",
+						"dev"
 					],
-					"port": "2545",
 					"path": [
 						"books",
-						"64822f04298f34109b3a0754"
+						"648b1371fe30c0f7344e8de2"
 					]
 				}
 			},
